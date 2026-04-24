@@ -41,14 +41,14 @@ class CodeMindExplainer:
 
         total_risk = min(sum(item.risk for item in findings), 100)
         lines: List[str] = []
-        lines.append("CodeMind analisou o script e encontrou estes comportamentos:\n")
+        lines.append("Analisei o teu código e encontrei isto:\n")
 
         for index, item in enumerate(findings, start=1):
             explanation = item.beginner if mode == "beginner" else item.technical
-            lines.append(f"{index}. {item.title}\n   {explanation}")
+            lines.append(f"{index}. {item.title}\n   {explanation}\n")
 
-        lines.append("\nResumo final:")
-        lines.append(self._build_summary(findings, total_risk))
+        lines.append("\nResumo:")
+	lines.append(self._build_summary(findings, total_risk))	
         return "\n".join(lines)
 
     def _collect_findings(self, tree: ast.AST) -> List[Finding]:
@@ -211,4 +211,4 @@ class CodeMindExplainer:
         if not parts:
             return "É um script simples, com poucas estruturas avançadas."
 
-        return "Este script " + ", ".join(parts) + "."
+        return "No geral, o código " + ", ".join(parts) + "."
