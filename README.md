@@ -4,7 +4,7 @@
 
 O utilizador cola ou abre um ficheiro `.py`, e o programa analisa a estrutura interna do código usando `ast` (*Abstract Syntax Tree*) para explicar em linguagem humana o que o script faz.
 
-> Projeto final desenvolvido para demonstrar autonomia, pesquisa e uso de bibliotecas/conceitos além do básico.
+
 
 ---
 
@@ -23,36 +23,26 @@ O CodeMind interpreta que existe um ciclo `for` e explica que o código repete u
 
 ---
 
-## Funcionalidades
+## O que o CodeMind faz
 
-- Interface gráfica com `tkinter`
-- Análise de código Python com `ast`
-- Modo iniciante
-- Modo técnico
-- Deteção de:
-  - funções
-  - classes
-  - ciclos `for` e `while`
-  - condições `if`
-  - imports
-  - tratamento de erros `try/except`
-  - list/dict comprehensions
-  - chamadas como `print`, `open`, `eval`, `exec`, `os.system` e `subprocess`
-- Score simples de atenção de segurança
-- Leitura de ficheiros `.py`
-- Voz opcional usando `pyttsx3`
+- Lê código Python
+- Analisa a estrutura do código com `ast`
+- Explica o código em modo iniciante ou técnico
+- Deteta funções, classes, ciclos, condições e imports
+- Deteta alguns pontos que merecem atenção, como `eval`, `exec`, `open`, `os.system` e `subprocess`
+- Permite abrir ficheiros `.py`
+- Tem voz opcional com `pyttsx3`
+- Tem interface gráfica feita com `tkinter`
+
 
 ---
 
-## O que foi usado além do básico
+## Porque escolhi este projeto
 
-### `ast`
+Eu queria fazer algo diferente dos projetos mais comuns, como calculadora, jogo da forca ou lista de tarefas.
 
-O módulo `ast` é nativo do Python e permite transformar código Python numa árvore de sintaxe abstrata. Em vez de apenas procurar palavras no texto, o CodeMind interpreta a estrutura real do código.
+A ideia foi criar uma ferramenta que ajudasse uma pessoa a entender código Python. Muitas vezes alguém olha para um script e até sabe algumas coisas, mas não percebe a estrutura geral. O CodeMind tenta resolver isso de uma forma simples.
 
-### `pyttsx3`
-
-Biblioteca externa opcional usada para transformar a explicação em voz offline.
 
 ---
 
@@ -82,24 +72,7 @@ Ou no Windows:
 py main.py
 ```
 
----
 
-## Estrutura do projeto
-
-```text
-CodeMind/
-│
-├── main.py
-├── requirements.txt
-├── README.md
-├── LICENSE
-│
-└── codemind/
-    ├── __init__.py
-    ├── app.py
-    ├── explainer.py
-    └── speaker.py
-```
 
 ---
 
